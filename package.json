@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm --prefix src install && npm install && cordova platform add android && cordova platform add ios && cordova plugin add cordova-plugin-flashlight",
     "build": "npm run --prefix src build && rm -Rf www && cp -R src/build www",
     "watch": "nodemon --ignore src/build --watch src --exec \"npm run build\"",
     "android": "npm run build && cordova run android --device",
